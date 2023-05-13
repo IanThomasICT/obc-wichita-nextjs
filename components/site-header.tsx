@@ -8,8 +8,6 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export function SiteHeader() {
   const items = siteConfig.mainNav as NavItem[]
 
-  console.log(items)
-
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -25,7 +23,7 @@ export function SiteHeader() {
                         key={index}
                         href={item.href}
                         className={
-                          "flex items-center text-lg font-semibold text-muted-foreground sm:text-sm"
+                          "flex items-center text-lg font-semibold text-muted-foreground sm:text-sm sm:uppercase"
                         }
                       >
                         {item.title}

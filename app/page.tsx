@@ -18,7 +18,7 @@ export default function IndexPage() {
       </div>
       <div className="flex gap-4">
         <Link
-          href={siteConfig.links.facebook}
+          href={siteConfig.links.social.facebook}
           target="_blank"
           rel="noreferrer"
           className={buttonVariants({ size: "lg" })}
@@ -28,7 +28,7 @@ export default function IndexPage() {
         <Link
           target="_blank"
           rel="noreferrer"
-          href={siteConfig.links.instagram}
+          href={siteConfig.links.social.instagram}
           className={buttonVariants({ variant: "outline", size: "lg" })}
         >
           Facebook
