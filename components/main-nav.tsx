@@ -8,10 +8,10 @@ export function MainNav() {
       <Link href="/" className="hidden items-center space-x-2 md:flex">
         <Icons.logo className="h-8 w-auto dark:invert" />
         <div className="hidden font-bold sm:flex sm:flex-col sm:text-justify sm:uppercase">
-          O L I V E T
-          <div className="text-[0.4em] sm:text-justify">
-            B a p t i s t &nbsp; C h u r c h
-          </div>
+          <span className="text-justify text-2xl w-28">O L I V E T</span>
+          <span className="text-[0.58em] sm:text-justify sm:font-extrabold w-28">
+            B a p t i s t &nbsp;&nbsp; C h u r c h
+          </span>
         </div>
       </Link>
     </div>

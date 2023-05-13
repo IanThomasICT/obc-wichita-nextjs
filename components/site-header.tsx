@@ -13,9 +13,9 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav />
         <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
+          <nav className="flex items-center space-x-3">
             {items?.length > 0 ? (
-              <nav className="hidden gap-6 md:flex">
+              <nav className="hidden gap-8 md:flex">
                 {items?.map(
                   (item, index) =>
                     item.href && (
@@ -23,7 +23,7 @@ export function SiteHeader() {
                         key={index}
                         href={item.href}
                         className={
-                          "flex items-center text-lg font-semibold text-muted-foreground sm:text-sm sm:uppercase"
+                          "flex items-center text-xl font-semibold text-muted-foreground hover:text-foreground duration-100 ease-in sm:text-sm sm:uppercase"
                         }
                       >
                         {item.title}

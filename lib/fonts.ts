@@ -1,4 +1,7 @@
-import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google"
+import {
+  Roboto_Mono as FontMono,
+  League_Spartan as FontSans,
+} from "next/font/google"
 
 export const fontSans = FontSans({
   subsets: ["latin"],
