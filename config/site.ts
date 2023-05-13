@@ -1,18 +1,44 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Olivet Baptist Church",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Our church exists for the glory of God. We seek to glorify Him by loving Him with all of our being, loving others as ourselves, and making disciples of all ages and nations starting right here in Wichita.",
   mainNav: [
     {
-      title: "Home",
+      title: "HOME",
       href: "/",
+    },
+    {
+      title: "I'm New",
+      href: "/im-new",
+    },
+    {
+      title: "Connect",
+      href: "/connect",
+    },
+    {
+      title: "Resources",
+      href: "/resources",
+    },
+    {
+      title: "Give",
+      href: "/give",
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    social: {
+      linkTree: "http://linktr.ee/olivetwichita",
+      facebook: "https://www.facebook.com/olivetwichita",
+      instagram: "https://www.instagram.com/olivet_wichita/",
+      youtube: "https://www.youtube.com/channel/UCwDa6t4nFtheiAUGhLmZHVA",
+    },
   },
+  address: {
+    street: "3440 West 13th Street North",
+    city: "Wichita",
+    state: "KS",
+    zip: "67203",
+  },
+  phone: "316-942-2246",
 }
