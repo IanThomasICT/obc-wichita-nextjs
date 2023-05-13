@@ -1,19 +1,95 @@
+"use client"
+
+import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react"
 import Link from "next/link"
 
-import { Icons } from "@/components/icons"
+import { NavItem } from "@/types/nav"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
 
 export function MainNav() {
+  const items = siteConfig.mainNav as NavItem[]
+
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Icons.logo className="h-8 w-auto dark:invert" />
-        <div className="hidden font-bold sm:flex sm:flex-col sm:text-justify sm:uppercase">
-          <span className="text-justify text-2xl w-28">O L I V E T</span>
-          <span className="text-[0.58em] sm:text-justify sm:font-extrabold w-28">
-            B a p t i s t &nbsp;&nbsp; C h u r c h
-          </span>
-        </div>
-      </Link>
-    </div>
+    <>
+      <NavigationMenu className="justify-end">
+        <NavigationMenuList>
+          {items?.length > 0
+            ? items?.slice(1).map(
+                (item, index) =>
+                  item.href && (
+                    <NavigationMenuItem
+                      key={item.title + index}
+                      className="relative"
+                    >
+                      {item.routes ? (
+                        <>
+                          <NavigationMenuTrigger>
+                            {item.title}
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid gap-3 p-6 md:w-[200px] lg:w-[300px]">
+                              {item.routes.map((route) => (
+                                <ListItem
+                                  key={route.title}
+                                  title={route.title}
+                                  href={route.href}
+                                >
+                                  {route.description}
+                                </ListItem>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </>
+                      ) : (
+                        <Link href={item.href} legacyBehavior passHref>
+                          <NavigationMenuLink
+                            className={navigationMenuTriggerStyle()}
+                          >
+                            {item.title}
+                          </NavigationMenuLink>
+                        </Link>
+                      )}
+                    </NavigationMenuItem>
+                  )
+              )
+            : null}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </>
   )
 }
+
+const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
+  ({ className, title, children, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className
+            )}
+            {...props}
+          >
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    )
+  }
+)
+ListItem.displayName = "ListItem"

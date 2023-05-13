@@ -1,40 +1,16 @@
-import Link from "next/link"
-
-import { NavItem } from "@/types/nav"
-import { siteConfig } from "@/config/site"
-import { MainNav } from "@/components/main-nav"
+import { LogoButton } from "@/components/logo-button"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-export function SiteHeader() {
-  const items = siteConfig.mainNav as NavItem[]
+import { MainNav } from "./main-nav"
 
+export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <MainNav />
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-3">
-            {items?.length > 0 ? (
-              <nav className="hidden gap-8 md:flex">
-                {items?.map(
-                  (item, index) =>
-                    item.href && (
-                      <Link
-                        key={index}
-                        href={item.href}
-                        className={
-                          "flex items-center text-xl font-semibold text-muted-foreground hover:text-foreground duration-100 ease-in sm:text-sm sm:uppercase"
-                        }
-                      >
-                        {item.title}
-                      </Link>
-                    )
-                )}
-              </nav>
-            ) : null}
-
-            <ThemeToggle />
-          </nav>
+        <LogoButton />
+        <div className="max-w-fit flex flex-1 items-center justify-end space-x-4">
+          <MainNav />
+          <ThemeToggle />
         </div>
       </div>
     </header>

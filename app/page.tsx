@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
 export default function IndexPage() {
@@ -22,12 +23,12 @@ export default function IndexPage() {
       </div>
       <div className="flex gap-4">
         <Link
-          href={siteConfig.links.social.facebook}
+          href="/when-we-gather"
           target="_blank"
           rel="noreferrer"
-          className={buttonVariants({ size: "lg" })}
+          className={cn(buttonVariants({ size: "lg" }), "uppercase")}
         >
-          Documentation
+          When we gather
         </Link>
         <Link
           target="_blank"
