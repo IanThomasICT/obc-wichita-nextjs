@@ -1,11 +1,10 @@
-import React from "react"
 import Image from "next/image"
-import Link from "next/link"
 import heroImage from "@/public/pastor-preaching-pulpit.jpg"
 import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+import ScrollLink from "./scroll-link"
 import { buttonVariants } from "./ui/button"
 
 export default function HeroSection(props: { className?: string }) {
@@ -33,15 +32,15 @@ export default function HeroSection(props: { className?: string }) {
             </p>
           </div>
           <div className="flex-grow flex gap-4">
-            <Link
-              href="/when-we-gather"
+            <ScrollLink
+              href="#worship-info"
               className={cn(
                 buttonVariants({ variant: "secondary", size: "lg" }),
                 "text-lg"
               )}
             >
-              When we gather
-            </Link>
+              Worship with us
+            </ScrollLink>
           </div>
           <div className="w-full hidden 2xl:block">
             <ChevronDown className="mx-auto w-12 h-12 text-muted animate-bounce duration-1000" />

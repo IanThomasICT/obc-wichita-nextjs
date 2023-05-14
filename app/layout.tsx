@@ -40,6 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
+
         <body
           className={cn(
             "min-h-screen bg-background antialiased overflow-x-hidden",

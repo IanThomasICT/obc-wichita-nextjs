@@ -1,119 +1,95 @@
-import Link from "next/link"
-import { Video } from "lucide-react"
+import Image from "next/image"
+import sanctuaryImage from "@/public/sanctuary-full-view.jpg"
+import { Clock10, MapPin } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import CardsSection from "@/components/cards-section"
 import HeroSection from "@/components/hero-section"
-import { Icons } from "@/components/icons"
 
 export default function IndexPage() {
   return (
     <>
       <HeroSection />
-      <section className="flex flex-col md:flex-row justify-center gap-6 m-6">
-        <Card className="max-w-md basis-1/3">
-          <CardHeader>
-            <CardTitle className="lg:text-2xl sm:text-xl text-lg">
-              When We Gather
-            </CardTitle>
+      <CardsSection />
+      {/* accent-tinted background image */}
+      <section id="worship-info" className="">
+        <div className="hidden lg:relative lg:block">
+          <Image
+            src={sanctuaryImage}
+            alt="full-view of olivet sanctuary"
+            className="blur-[2px]"
+          />
+          <div className="absolute inset-0 bg-foreground opacity-70 z-10"></div>
+
+          <div className="absolute inset-0 flex flex-col justify-center mx-auto z-20 text-background xl:max-w-4xl md:max-w-2xl max-w-screen-sm gap-6">
+            <h2 className="text-lg font-semibold sm:text-2xl md:text-4xl lg:text-5xl text-center">
+              Worship Gathering Information
+            </h2>
             <Separator />
-          </CardHeader>
-          <CardContent className="flex-grow grid space-y-2 text-lg">
-            <span>
-              <span className="w-fit flex items-baseline gap-1.5">
-                <strong className="text-xl">Sundays</strong> |{" "}
-                <strong>10:00 AM</strong>
+
+            {/* Service / Location card */}
+            <div className="flex flex-col lg:flex-row items-center gap-10 max-w-xl xl:max-w-3xl mx-auto">
+              <div className="flex flex-col gap-8 pl-14 pr-8 py-8 rounded-lg bg-white/10 backdrop-blur-sm whitespace-nowrap">
+                <p className="xl:text-2xl text-xl text-muted-background tracking-wider flex flex-col gap-4 ">
+                  <span className="-ml-8 flex xl:text-4xl text-3xl text-background gap-2 items-baseline leading-3 font-bold ">
+                    <Clock10 className="" /> Service Time
+                  </span>
+                  Sunday at 10:00am
+                </p>
+                <p className="xl:text-2xl text-lg text-muted-background tracking-wider flex flex-col gap-4">
+                  <span className="-ml-8 flex xl:text-4xl gap-2 items-baseline leading-3 font-bold">
+                    <MapPin /> Location
+                  </span>
+                  {siteConfig.address.street}
+                  <br />
+                  {siteConfig.address.city}, {siteConfig.address.state}{" "}
+                  {siteConfig.address.zip}
+                </p>
+              </div>
+              <div className="flex-auto grid items-center xl:text-2xl sm:text-xl text-lg text-muted-background tracking-wider gap-2">
+                <span>Main parking lot on the north side.</span>
+                <span>
+                  Additional parking is available on the west side of High St.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-foreground p-10 lg:hidden">
+          <h2 className="text-2xl font-semibold text-background text-center mb-2">
+            Worship Gathering Information
+          </h2>
+
+          {/* Service / Location card */}
+          <div className="bg-background rounded-lg max-w-fit mx-auto">
+            <div className="flex flex-col gap-4 pl-14 pr-8 py-8">
+              {/* Service time */}
+              <p className="text-xl text-muted-background tracking-wider flex flex-col gap-4 whitespace-nowrap">
+                <span className="-ml-8 flex text-3xl gap-2 items-baseline leading-3 font-bold ">
+                  <Clock10 className="" /> Service Time
+                </span>
+                Sunday at 10:00am
+              </p>
+
+              {/* Location time */}
+              <p className="text-xl text-muted-background tracking-wider flex flex-col gap-4 whitespace-nowrap mb-2">
+                <span className="-ml-8 flex text-3xl gap-2 items-baseline leading-3 font-bold">
+                  <MapPin /> Location
+                </span>
+                {siteConfig.address.street}
+                <br />
+                {siteConfig.address.city}, {siteConfig.address.state}{" "}
+                {siteConfig.address.zip}
+              </p>
+
+              <span>
+                Main parking lot is on the north side. <br />
+                Additional parking is available on the west side of High St.
               </span>
-              Worship Gathering
-            </span>
-            <span>
-              <span className="w-fit flex items-baseline gap-1.5">
-                <strong className="text-xl">Wednesdays</strong> |{" "}
-                <strong>6:30 PM</strong>
-              </span>
-              Adult study, AWANA, Youth Group
-            </span>
-            <span>
-              <strong className="text-xl">Discipleship Groups</strong> meet
-              various times throughout the week.
-            </span>
-          </CardContent>
-          <CardFooter className="">
-            <Link href="/resources/calendar" className="my-auto">
-              <Button variant={"default"} className="text-lg">
-                View upcoming events
-              </Button>
-            </Link>
-          </CardFooter>
-        </Card>
-        <Card className="max-w-md basis-1/3 flex flex-col">
-          <CardHeader>
-            <CardTitle className="lg:text-2xl sm:text-xl text-lg">
-              Who We Are
-            </CardTitle>
-            <Separator />
-          </CardHeader>
-          <CardContent className="flex-grow text-lg xl:text-2xl">
-            We are a Christ-ruled, pastor/elder-led, deacon-served, staff-run,
-            congregationally-governed body of believers.
-            <br />
-          </CardContent>
-          <CardFooter className="grid gap-2 xs:grid-flow-col lg:grid-flow-col sm:md:grid-flow-row max-w-fit">
-            {/* TODO: Figure out a better name for this button */}
-            <Link href="/im-new/leadership">
-              <Button variant={"default"} className="text-lg w-full">
-                Meet our Team
-              </Button>
-            </Link>
-            <Link href="/im-new/core-documents">
-              <Button variant={"outline"} className="text-lg w-full">
-                Our Beliefs
-              </Button>
-            </Link>
-          </CardFooter>
-        </Card>
-        <Card className="max-w-md basis-1/3 flex flex-col">
-          <CardHeader>
-            <CardTitle className="lg:text-2xl sm:text-xl text-lg">
-              Resources
-            </CardTitle>
-            <Separator />
-          </CardHeader>
-          <CardContent className="grid space-y-2 max-w-fit">
-            <Link href="/resources/sermon-videos">
-              <Button
-                variant={"outline"}
-                className="flex gap-4 w-full justify-start text-lg"
-              >
-                <Video /> Watch Sermons
-              </Button>
-            </Link>
-            <Link href="/resources/recommended-reading">
-              <Button
-                variant={"outline"}
-                className="flex gap-4 w-full justify-start text-lg"
-              >
-                <Icons.bookMarked /> Recommended Reading
-              </Button>
-            </Link>
-            <Link href={siteConfig.links.social.spotify}>
-              <Button
-                variant={"outline"}
-                className="flex gap-4 w-full justify-start text-lg"
-              >
-                <Icons.spotify className="w-6 h-6" /> Recommended Music
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   )

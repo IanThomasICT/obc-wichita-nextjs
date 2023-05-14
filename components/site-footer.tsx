@@ -10,7 +10,7 @@ const SiteFooter = ({ className }: Props) => {
   const socialLinks = siteConfig.links.social
 
   return (
-    <footer className={`${className} w-full bg-foreground`}>
+    <footer className={`${className} w-full bg-foreground border-t border-muted/25`}>
       <div className="container flex flex-col my-4 justify-end text-right text-background">
         <span>{siteConfig.address.full}</span>
         <span>{siteConfig.phone}</span>
