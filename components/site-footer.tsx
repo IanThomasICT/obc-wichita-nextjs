@@ -36,6 +36,12 @@ const SiteFooter = ({ className }: Props) => {
           >
             <Icons.youtube className="w-6 h-6" />
           </a>
+          <a
+            href={socialLinks.spotify}
+            className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg"
+          >
+            <Icons.spotify className="w-6 h-6 fill-background" />
+          </a>
         </div>
       </div>
     </footer>

@@ -1,8 +1,8 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { League_Spartan as FontSans } from "next/font/google"
 
 import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
-    icon: "/globe-icon.png",
+    icon: "/blue-icon.svg",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
@@ -30,6 +30,11 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
@@ -37,8 +42,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            "min-h-screen bg-background antialiased overflow-x-hidden",
+            fontSans.className,
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

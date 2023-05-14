@@ -1,8 +1,22 @@
+import { Roboto_Mono as FontMono } from "next/font/google"
+
+import { cn } from "@/lib/utils"
+
+const fontMono = FontMono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
+
 export function TailwindIndicator() {
   if (process.env.NODE_ENV === "production") return null
 
   return (
-    <div className="fixed bottom-1 left-1 z-50 flex h-6 w-6 items-center justify-center rounded-full bg-gray-800 p-3 font-mono text-xs text-white">
+    <div
+      className={cn(
+        "fixed bottom-1 left-1 z-50 flex h-6 w-6 items-center justify-center rounded-full bg-gray-800 p-3 text-xs text-white",
+        fontMono.className
+      )}
+    >
       <div className="block sm:hidden">xs</div>
       <div className="hidden sm:block md:hidden lg:hidden xl:hidden 2xl:hidden">
         sm

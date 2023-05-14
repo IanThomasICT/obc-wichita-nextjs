@@ -1,44 +1,120 @@
 import Link from "next/link"
+import { Video } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import HeroSection from "@/components/hero-section"
+import { Icons } from "@/components/icons"
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          Our church exists for the glory of God
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          We seek to glorify Him by <strong>loving Him</strong> with all of our
-          being, <strong>loving others</strong> as ourselves, and{" "}
-          <strong>making disciples</strong> of all ages and nations starting
-          right here in Wichita.
-        </p>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          We invite you to join us for worship this Sunday at 10:00 a.m
-        </p>
-      </div>
-      <div className="flex gap-4">
-        <Link
-          href="/when-we-gather"
-          target="_blank"
-          rel="noreferrer"
-          className={cn(buttonVariants({ size: "lg" }), "uppercase")}
-        >
-          When we gather
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.social.instagram}
-          className={buttonVariants({ variant: "outline", size: "lg" })}
-        >
-          Facebook
-        </Link>
-      </div>
-    </section>
+    <>
+      <HeroSection />
+      <section className="flex flex-col md:flex-row justify-center gap-6 m-6">
+        <Card className="max-w-md basis-1/3">
+          <CardHeader>
+            <CardTitle className="lg:text-2xl sm:text-xl text-lg">
+              When We Gather
+            </CardTitle>
+            <Separator />
+          </CardHeader>
+          <CardContent className="flex-grow grid space-y-2 text-lg">
+            <span>
+              <span className="w-fit flex items-baseline gap-1.5">
+                <strong className="text-xl">Sundays</strong> |{" "}
+                <strong>10:00 AM</strong>
+              </span>
+              Worship Gathering
+            </span>
+            <span>
+              <span className="w-fit flex items-baseline gap-1.5">
+                <strong className="text-xl">Wednesdays</strong> |{" "}
+                <strong>6:30 PM</strong>
+              </span>
+              Adult study, AWANA, Youth Group
+            </span>
+            <span>
+              <strong className="text-xl">Discipleship Groups</strong> meet
+              various times throughout the week.
+            </span>
+          </CardContent>
+          <CardFooter className="">
+            <Link href="/resources/calendar" className="my-auto">
+              <Button variant={"default"} className="text-lg">
+                View upcoming events
+              </Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card className="max-w-md basis-1/3 flex flex-col">
+          <CardHeader>
+            <CardTitle className="lg:text-2xl sm:text-xl text-lg">
+              Who We Are
+            </CardTitle>
+            <Separator />
+          </CardHeader>
+          <CardContent className="flex-grow text-lg xl:text-2xl">
+            We are a Christ-ruled, pastor/elder-led, deacon-served, staff-run,
+            congregationally-governed body of believers.
+            <br />
+          </CardContent>
+          <CardFooter className="grid gap-2 xs:grid-flow-col lg:grid-flow-col sm:md:grid-flow-row max-w-fit">
+            {/* TODO: Figure out a better name for this button */}
+            <Link href="/im-new/leadership">
+              <Button variant={"default"} className="text-lg w-full">
+                Meet our Team
+              </Button>
+            </Link>
+            <Link href="/im-new/core-documents">
+              <Button variant={"outline"} className="text-lg w-full">
+                Our Beliefs
+              </Button>
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card className="max-w-md basis-1/3 flex flex-col">
+          <CardHeader>
+            <CardTitle className="lg:text-2xl sm:text-xl text-lg">
+              Resources
+            </CardTitle>
+            <Separator />
+          </CardHeader>
+          <CardContent className="grid space-y-2 max-w-fit">
+            <Link href="/resources/sermon-videos">
+              <Button
+                variant={"outline"}
+                className="flex gap-4 w-full justify-start text-lg"
+              >
+                <Video /> Watch Sermons
+              </Button>
+            </Link>
+            <Link href="/resources/recommended-reading">
+              <Button
+                variant={"outline"}
+                className="flex gap-4 w-full justify-start text-lg"
+              >
+                <Icons.bookMarked /> Recommended Reading
+              </Button>
+            </Link>
+            <Link href={siteConfig.links.social.spotify}>
+              <Button
+                variant={"outline"}
+                className="flex gap-4 w-full justify-start text-lg"
+              >
+                <Icons.spotify className="w-6 h-6" /> Recommended Music
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </section>
+    </>
   )
 }

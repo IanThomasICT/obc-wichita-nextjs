@@ -112,6 +112,8 @@ export const siteConfig = {
       facebook: "https://www.facebook.com/olivetwichita",
       instagram: "https://www.instagram.com/olivet_wichita/",
       youtube: "https://www.youtube.com/channel/UCwDa6t4nFtheiAUGhLmZHVA",
+      spotify:
+        "https://open.spotify.com/playlist/2x22YclwIfScZEI2FOd07Z?si=4a03d6d2e63e4c2f",
     },
   },
   address: {
