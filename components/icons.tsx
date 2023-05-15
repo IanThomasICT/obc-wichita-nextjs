@@ -1,5 +1,5 @@
 import Image from "next/image"
-import globeLogo from "@/public/globe-icon.png"
+import globeLogo from "@/public/images/globe-icon.png"
 import {
   Facebook,
   Instagram,

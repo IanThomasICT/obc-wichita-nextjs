@@ -1,5 +1,5 @@
 import Image from "next/image"
-import heroImage from "@/public/pastor-preaching-pulpit.jpg"
+import heroImage from "@/public/images/pastor-preaching-pulpit.jpg"
 import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"

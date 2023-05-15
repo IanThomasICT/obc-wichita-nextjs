@@ -1,5 +1,5 @@
 import Image from "next/image"
-import sanctuaryImage from "@/public/sanctuary-full-view.jpg"
+import sanctuaryImage from "@/public/images/sanctuary-full-view.jpg"
 import { Clock10, MapPin } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
