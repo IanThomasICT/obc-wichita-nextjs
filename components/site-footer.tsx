@@ -13,11 +13,11 @@ const SiteFooter = ({ className }: Props) => {
     <footer className={`${className} w-full bg-foreground border-t border-muted/25`}>
       <div className="container flex flex-col my-4 justify-end text-right text-background">
         <span>{siteConfig.address.full}</span>
-        <span>{siteConfig.phone}</span>
         <span>
           {siteConfig.businessHours.days} {siteConfig.businessHours.hours}
         </span>
-        <div className="flex justify-end gap-2">
+        <span>{siteConfig.phone}</span>
+        <div className="flex justify-end gap-2 mt-2">
           <a
             href={socialLinks.facebook}
             className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg"
