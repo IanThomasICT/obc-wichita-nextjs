@@ -3,10 +3,17 @@
 import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react"
 import Link from "next/link"
 
-import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
+interface NavItem {
+  title: string
+  href?: string
+  description?: string
+  routes?: NavItem[]
+  disabled: boolean
+}
 
 export default function MainNavigation() {
   const items = siteConfig.mainNav as NavItem[]
@@ -26,7 +33,7 @@ export default function MainNavigation() {
                           <NavigationMenuContent>
                             <ul className="grid gap-3 p-6 md:w-[200px] lg:w-[300px]">
                               {item.routes.map((route) => (
-                                <ListItem key={route.title} title={route.title} href={route.href}>
+                                <ListItem key={route.title} title={route.title} href={route.href} className={cn(route.disabled ? "select-none pointer-events-none text-neutral-300" : "")}>
                                   {route.description}
                                 </ListItem>
                               ))}
@@ -61,7 +68,7 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(({ c
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+          <p className={cn("line-clamp-2 text-sm leading-snug text-muted-foreground", className)}>{children}</p>
         </a>
       </NavigationMenuLink>
     </li>
