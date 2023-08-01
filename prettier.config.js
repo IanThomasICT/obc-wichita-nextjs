@@ -4,6 +4,7 @@ module.exports = {
   semi: false,
   singleQuote: false,
   tabWidth: 2,
+  printWidth: 200,
   trailingComma: "es5",
   importOrder: [
     "^(react/(.*)$)|^(react$)",

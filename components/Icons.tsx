@@ -1,14 +1,4 @@
-import Image from "next/image"
-import globeLogo from "@/public/images/globe-icon.png"
-import {
-  Facebook,
-  Instagram,
-  LucideProps,
-  Moon,
-  SunMedium,
-  Youtube,
-  type Icon as LucideIcon,
-} from "lucide-react"
+import { Facebook, Instagram, LucideProps, Moon, SunMedium, Youtube, type Icon as LucideIcon } from "lucide-react"
 
 export type Icon = LucideIcon
 
@@ -19,20 +9,9 @@ export const Icons = {
   youtube: Youtube,
   instagram: Instagram,
   logo: (props: LucideProps) => (
-    <svg
-      fill="#000000"
-      version="1.1"
-      id="Capa_1"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 356.926 356.926"
-      {...props}
-    >
+    <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356.926 356.926" {...props}>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-      <g
-        id="SVGRepo_tracerCarrier"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></g>
+      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
       <g id="SVGRepo_iconCarrier">
         {" "}
         <g>

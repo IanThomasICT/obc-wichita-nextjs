@@ -5,10 +5,7 @@ import { cn } from "@/lib/utils"
 import { Separator } from "./separator"
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip"
 
-function BibleRef(props: {
-  content: string
-  size: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 12 | 14 | 16
-}) {
+function BibleRef(props: { content: string; size: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 12 | 14 | 16 }) {
   const iconSize = `w-${props.size} h-${props.size}`
   return (
     <Tooltip delayDuration={200}>

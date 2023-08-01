@@ -31,8 +31,7 @@ export const siteConfig = {
         {
           title: "Core Documents",
           href: "/im-new/core-documents",
-          description:
-            "View our statement of faith, church covanent, and constitution & bylaws",
+          description: "View our statement of faith, church covanent, and constitution & bylaws",
         },
       ],
     },
@@ -58,8 +57,7 @@ export const siteConfig = {
         {
           title: "Encuentro con Cristo",
           href: "/connect/encuentro-con-cristo",
-          description:
-            "Meet our Spanish speaking congregation and learn about their ministry",
+          description: "Meet our Spanish speaking congregation and learn about their ministry",
         },
       ],
     },
@@ -80,20 +78,17 @@ export const siteConfig = {
         {
           title: "Recommended Reading",
           href: "/resources/recommended-reading",
-          description:
-            "View our recommended reading list and bi-monthly book club calendar",
+          description: "View our recommended reading list and bi-monthly book club calendar",
         },
         {
           title: "Recommended Listening",
           href: "/resources/recommended-listening",
-          description:
-            "Listen to theologically rich songs on our Spotify playlist",
+          description: "Listen to theologically rich songs on our Spotify playlist",
         },
         {
           title: "Calendar",
           href: "/resources/calendar",
-          description:
-            "Full schedule of events and activities at Olivet Baptist Church",
+          description: "Full schedule of events and activities at Olivet Baptist Church",
         },
       ],
     },
@@ -112,8 +107,7 @@ export const siteConfig = {
       facebook: "https://www.facebook.com/olivetwichita",
       instagram: "https://www.instagram.com/olivet_wichita/",
       youtube: "https://www.youtube.com/channel/UCwDa6t4nFtheiAUGhLmZHVA",
-      spotify:
-        "https://open.spotify.com/playlist/2x22YclwIfScZEI2FOd07Z?si=4a03d6d2e63e4c2f",
+      spotify: "https://open.spotify.com/playlist/2x22YclwIfScZEI2FOd07Z?si=4a03d6d2e63e4c2f",
     },
   },
   address: {

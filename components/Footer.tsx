@@ -1,12 +1,12 @@
 import { siteConfig } from "@/config/site"
 
-import { Icons } from "./icons"
+import { Icons } from "./Icons"
 
 type Props = {
   className?: string
 }
 
-const SiteFooter = ({ className }: Props) => {
+export default function Footer({ className }: Props) {
   const socialLinks = siteConfig.links.social
 
   return (
@@ -18,28 +18,16 @@ const SiteFooter = ({ className }: Props) => {
         </span>
         <span>{siteConfig.phone}</span>
         <div className="flex justify-end gap-2 mt-2">
-          <a
-            href={socialLinks.facebook}
-            className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg"
-          >
+          <a href={socialLinks.facebook} className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg">
             <Icons.facebook className="w-6 h-6" />
           </a>
-          <a
-            href={socialLinks.instagram}
-            className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg"
-          >
+          <a href={socialLinks.instagram} className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg">
             <Icons.instagram className="w-6 h-6" />
           </a>
-          <a
-            href={socialLinks.youtube}
-            className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg"
-          >
+          <a href={socialLinks.youtube} className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg">
             <Icons.youtube className="w-6 h-6" />
           </a>
-          <a
-            href={socialLinks.spotify}
-            className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg"
-          >
+          <a href={socialLinks.spotify} className="border p-1 border-background brightness-50 hover:brightness-100 duration-100 rounded-lg">
             <Icons.spotify className="w-6 h-6 fill-background" />
           </a>
         </div>
@@ -47,5 +35,3 @@ const SiteFooter = ({ className }: Props) => {
     </footer>
   )
 }
-
-export default SiteFooter

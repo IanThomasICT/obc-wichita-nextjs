@@ -4,8 +4,8 @@ import { Clock10, MapPin } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { Separator } from "@/components/ui/separator"
-import CardsSection from "@/components/cards-section"
-import HeroSection from "@/components/hero-section"
+import CardsSection from "@/components/CardSection"
+import HeroSection from "@/components/HeroSection"
 
 export default function IndexPage() {
   return (
@@ -14,10 +14,8 @@ export default function IndexPage() {
       <CardsSection />
       <section className="bg-accent h-full">
         <p className="mx-auto text-2xl font-semibold text-foreground text-center p-10 max-w-5xl">
-          Whether you've grown up in church all your life or have never been to
-          church before, we hope that Olivet will be a warm and welcoming place
-          for you where you're engaged with the truth of God's Word and the love
-          of God's people.
+          Whether you've grown up in church all your life or have never been to church before, we hope that Olivet will be a warm and welcoming place for you where you're engaged with the truth of
+          God's Word and the love of God's people.
         </p>
       </section>
 
@@ -25,17 +23,11 @@ export default function IndexPage() {
       <section id="worship-info" className="">
         {/* Desktop version */}
         <div className="hidden lg:relative lg:block bg-foreground">
-          <Image
-            src={sanctuaryImage}
-            alt="full-view of olivet sanctuary"
-            className="blur-[2px]"
-          />
+          <Image src={sanctuaryImage} alt="full-view of olivet sanctuary" className="blur-[2px]" />
           <div className="absolute inset-0 bg-foreground opacity-70 z-10"></div>
 
           <div className="absolute inset-0 flex flex-col justify-center mx-auto z-20 text-background xl:max-w-4xl md:max-w-2xl max-w-screen-sm gap-6">
-            <h2 className="text-lg font-semibold sm:text-2xl md:text-4xl lg:text-5xl text-center">
-              Worship Gathering Information
-            </h2>
+            <h2 className="text-lg font-semibold sm:text-2xl md:text-4xl lg:text-5xl text-center">Worship Gathering Information</h2>
             <Separator />
 
             {/* Service / Location card */}
@@ -53,15 +45,12 @@ export default function IndexPage() {
                   </span>
                   {siteConfig.address.street}
                   <br />
-                  {siteConfig.address.city}, {siteConfig.address.state}{" "}
-                  {siteConfig.address.zip}
+                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
                 </p>
               </div>
               <div className="flex-auto grid items-center xl:text-2xl sm:text-xl text-lg text-muted-background tracking-wider gap-2">
                 <span>Main parking lot on the north side.</span>
-                <span>
-                  Additional parking is available on the west side of High St.
-                </span>
+                <span>Additional parking is available on the west side of High St.</span>
               </div>
             </div>
           </div>
@@ -70,9 +59,7 @@ export default function IndexPage() {
         {/* Mobile Version */}
         <div className="bg-foreground p-16 lg:hidden ">
           <div className="grid gap-4 justify-center">
-            <h2 className="text-4xl font-semibold text-background text-center">
-              Worship Gathering Information
-            </h2>
+            <h2 className="text-4xl font-semibold text-background text-center">Worship Gathering Information</h2>
             <Separator className="w-screen max-w-lg" />
 
             {/* Service / Location card */}
@@ -93,8 +80,7 @@ export default function IndexPage() {
                   </span>
                   {siteConfig.address.street}
                   <br />
-                  {siteConfig.address.city}, {siteConfig.address.state}{" "}
-                  {siteConfig.address.zip}
+                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
                 </p>
 
                 <span className="font-bold">
