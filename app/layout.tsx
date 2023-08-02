@@ -37,7 +37,12 @@ export default function RootLayout({ children }: Props) {
       <html lang="en" suppressHydrationWarning>
         <head />
 
-        <body className={cn("min-h-screen overflow-x-hidden bg-background antialiased", fontSans.className)}>
+        <body
+          className={cn(
+            "min-h-screen overflow-x-hidden bg-background antialiased scrollbar-thin scrollbar-track-muted scrollbar-thumb-muted-foreground/50 scrollbar-thumb-rounded-sm",
+            fontSans.className
+          )}
+        >
           <TooltipProvider>
             <div className="relative flex min-h-screen flex-col">
               <Header />

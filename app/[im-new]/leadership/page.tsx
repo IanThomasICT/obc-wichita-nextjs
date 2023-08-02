@@ -4,9 +4,9 @@ import { Mail } from "lucide-react"
 import { staffInfo } from "@/config/staff"
 import BibleRef from "@/components/ui/BibleReference"
 
-function LeadershipPage() {
+export default function LeadershipPage() {
   return (
-    <div className="space-y-12 bg-muted-foreground/10 py-6">
+    <div className="space-y-12 bg-muted-foreground/10 py-12">
       {/* Pastors / Elders */}
       <section className="">
         <div className="mx-auto grid max-w-4xl justify-center gap-4 px-4 text-lg text-foreground">
@@ -51,13 +51,9 @@ function LeadershipPage() {
             <div key={staff.name} className="mt-auto max-w-fit rounded bg-background p-4 shadow">
               <h2 className="text-center text-3xl font-bold capitalize">{staff.name}</h2>
               <a href={"mailto:" + staff.email} className="group relative block">
-                <Image src={staff.img} alt={staff.name} width={300} height={250} className="rounded-md brightness-100 drop-shadow-lg duration-300 ease-in-out group-hover:brightness-50" />
+                <Image src={staff.img} alt={staff.name} width={250} height={250} className="rounded-md brightness-100 drop-shadow-lg duration-300 ease-in-out group-hover:brightness-50" />
                 <Mail className="absolute left-[45%] top-[40%] h-10 w-10 translate-y-5 text-white opacity-0 ease-in group-hover:opacity-100 group-hover:duration-200" />
-                {staff.title && (
-                  <p className="absolute bottom-0 w-full whitespace-nowrap rounded-b-md border border-foreground/30 bg-foreground px-4 py-1.5 text-center text-lg tracking-wider text-muted">
-                    {staff.title}
-                  </p>
-                )}
+                {staff.title && <p className="absolute bottom-0 w-full rounded-b-md border border-foreground/30 bg-foreground py-1.5 text-center tracking-wider text-muted">{staff.title}</p>}
               </a>
             </div>
           ))}
@@ -66,5 +62,3 @@ function LeadershipPage() {
     </div>
   )
 }
-
-export default LeadershipPage
