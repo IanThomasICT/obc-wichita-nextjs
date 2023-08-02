@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Mail } from "lucide-react"
 
 import { staffInfo } from "@/config/staff"
@@ -10,28 +13,37 @@ export default function LeadershipPage() {
       {/* Pastors / Elders */}
       <section className="">
         <div className="mx-auto grid max-w-4xl justify-center gap-4 px-4 text-lg text-foreground">
-          <h1 className="py-4 text-center text-6xl font-bold uppercase tracking-widest">Pastors / Elders</h1>
-          <span className="whitespace-nowrap text-xl">Olivet is a Christ-ruled, pastor/elder-led, deacon-served, staff-run, congregationally-governed body of believers.</span>
-          <span>
+          <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.8 } }} className="py-4 text-center text-6xl font-bold uppercase tracking-widest">
+            Pastors / Elders
+          </motion.h1>
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.1, duration: 1.2 } }} className="whitespace-nowrap text-xl">
+            Olivet is a Christ-ruled, pastor/elder-led, deacon-served, staff-run, congregationally-governed body of believers.
+          </motion.span>
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.1, duration: 1.2 } }}>
             Following the pattern of the New Testament, we use the terms pastor/elder/overseer interchangeably.
             <BibleRef content="Acts 20:17, 28; Titus 1:5-9; 1 Peter 5:1-4" size={3} />
             Our pastors / elders / overseers are the under-shepherds who serve the Chief Shepherd (i.e. Jesus) by leading and caring for the flock of Olivet Baptist Church. Our pastors / elders /
             overseers are accountable to the church as a whole.
-          </span>
+          </motion.span>
         </div>
       </section>
 
       <section className="mx-20">
         <div className="mx-4 flex flex-wrap justify-center gap-4">
           {staffInfo.pastors.map((pastor) => (
-            <div key={pastor.name} className="mt-auto max-w-fit rounded bg-background p-5 shadow">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.2, duration: 1.5 } }}
+              key={pastor.name}
+              className="mt-auto max-w-fit rounded bg-background p-5 shadow"
+            >
               <h2 className="text-center text-3xl font-bold capitalize">{pastor.name}</h2>
               <a href={"mailto:" + pastor.email} className="group relative block">
                 <Image src={pastor.img} alt={pastor.name} width={250} height={250} className="rounded-md brightness-100 drop-shadow-lg duration-300 ease-in-out group-hover:brightness-50" />
                 <Mail className="absolute left-[45%] top-[40%] h-10 w-10 translate-y-5 text-white opacity-0 ease-in group-hover:opacity-100 group-hover:duration-200" />
                 {pastor.title && <p className="absolute bottom-0 w-full rounded-b-md border border-foreground/30 bg-foreground py-1.5 text-center text-lg tracking-wider text-muted">{pastor.title}</p>}
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

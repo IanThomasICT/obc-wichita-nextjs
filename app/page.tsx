@@ -109,15 +109,28 @@ export default function IndexPage() {
   )
 }
 
+const transition = {
+  type: "spring",
+  damping: 25,
+  stiffness: 120,
+}
+
 function HeroSection({ className }: Props) {
   return (
     <section className={cn("relative h-full w-screen", className)}>
-      <Image src={heroImage} alt={"pastor preaching in pulpit"} className="h-full w-full" />
+      <motion.img
+        initial={{ scale: 1.05 }}
+        animate={{ scale: 1, transition: { duration: 4 } }}
+        transition={transition}
+        src="/images/pastor-preaching-pulpit.jpg"
+        alt={"pastor preaching in pulpit"}
+        className="h-full w-full"
+      />
       <div className="absolute top-0 h-full w-full pb-6 pl-24 pt-24 text-white">
         <div className="flex h-full flex-col items-start justify-end gap-6 ">
           <motion.h1
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0, transition: { delay: 0.3, duration: 2 } }}
+            animate={{ opacity: 1, x: 0, transition: { duration: 2 } }}
             className="max-w-lg text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl"
           >
             Our church exists for the glory of God
