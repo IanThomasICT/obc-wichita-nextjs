@@ -9,7 +9,7 @@ export default function BibleRef(props: { content: string; size: 1 | 2 | 3 | 4 |
     <Tooltip delayDuration={200}>
       <TooltipTrigger className="group mr-2">
         <BookmarkPlus className={iconSize} />
-        <Separator className="bg-transparent mt-0.5 group-hover:bg-foreground duration-150" />
+        <Separator className="mt-0.5 bg-transparent duration-150 group-hover:bg-foreground" />
       </TooltipTrigger>
       <TooltipContent>{props.content}</TooltipContent>
     </Tooltip>

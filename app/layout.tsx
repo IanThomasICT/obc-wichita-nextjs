@@ -6,10 +6,10 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import Footer from "@/components/Footer"
-import { Header } from "@/components/Header"
+import Header from "@/components/Header"
 import { TailwindIndicator } from "@/components/TailwindIndicator"
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: Props) {
       <html lang="en" suppressHydrationWarning>
         <head />
 
-        <body className={cn("min-h-screen bg-background antialiased overflow-x-hidden", fontSans.className)}>
+        <body className={cn("min-h-screen overflow-x-hidden bg-background antialiased", fontSans.className)}>
           <TooltipProvider>
             <div className="relative flex min-h-screen flex-col">
               <Header />

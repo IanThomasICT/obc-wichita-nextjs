@@ -33,7 +33,7 @@ export default function MainNavigation() {
                           <NavigationMenuContent>
                             <ul className="grid gap-3 p-6 md:w-[200px] lg:w-[300px]">
                               {item.routes.map((route) => (
-                                <ListItem key={route.title} title={route.title} href={route.href} className={cn(route.disabled ? "select-none pointer-events-none text-neutral-300" : "")}>
+                                <ListItem key={route.title} title={route.title} href={route.href} className={cn(route.disabled ? "pointer-events-none select-none text-neutral-300" : "")}>
                                   {route.description}
                                 </ListItem>
                               ))}
