@@ -48,7 +48,7 @@ export default function LeadershipPage() {
       <section>
         <div className="mx-4 flex flex-wrap justify-center gap-4">
           {staffInfo.staff.map((staff) => (
-            <div key={staff.name} className="mt-auto max-w-fit rounded bg-background p-4 shadow">
+            <div key={staff.name} className="mt-auto max-w-fit rounded bg-background px-8 pb-6 pt-4 shadow">
               <h2 className="text-center text-3xl font-bold capitalize">{staff.name}</h2>
               <a href={"mailto:" + staff.email} className="group relative block">
                 <Image src={staff.img} alt={staff.name} width={250} height={250} className="rounded-md brightness-100 drop-shadow-lg duration-300 ease-in-out group-hover:brightness-50" />
