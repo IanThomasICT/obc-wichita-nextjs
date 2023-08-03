@@ -27,8 +27,8 @@ export default function IndexPage() {
       <CardSection className="mx-6 my-16 flex flex-col justify-center gap-8 md:flex-row" />
       <section className="h-full bg-accent">
         <p className="mx-auto max-w-5xl p-10 py-20 text-center text-2xl font-semibold leading-10 text-foreground">
-          Whether you've grown up in church all your life or have never been to church before, we hope that Olivet will be a warm and welcoming place for you where you're engaged with the truth of
-          God's Word and the love of God's people.
+          Whether you&apos;ve grown up in church all your life or have never been to church before, we hope that Olivet will be a warm and welcoming place for you where you&apos;re engaged with the
+          truth of God&apos;s Word and the love of God&apos;s people.
         </p>
       </section>
 
@@ -149,7 +149,7 @@ function HeroSection({ className }: Props) {
               We invite you to join us for worship this Sunday at 10:00 a.m
             </motion.p>
           </div>
-          <div className="flex flex-grow gap-4">
+          <div className="flex grow gap-4">
             <ScrollLink href="#worship-info" className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "text-lg")}>
               Worship with us
             </ScrollLink>
